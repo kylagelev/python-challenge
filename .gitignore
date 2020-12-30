@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Resources/PyBank_budget_data.csv
+Resources/PyPoll_election_data.csv
