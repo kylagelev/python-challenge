@@ -18,17 +18,18 @@ with open(bankdata) as csvfile:
         profit_loss = int(row[1])
         net_total = net_total + profit_loss
     print(f'Net Total: ${net_total}')
-
-    #average change in profit
+#average change in profit
     changes=[]
+
     
+#OKAY I NEED TO SKIP THE SECOND VALUE IN THE FIRST LIST,AKA THE FIRST ROW
     #created function to find first value in series of lists
-    def need_first_value(row1):
-        return [item[0] for item in row1]
+    #def need_first_value(row1):
+        #return [item[0] for item in row1]
     
     #using function
-    row1 = csv_reader
-    need_first_value(row1)
+    #row1 = csv_reader
+    #new_change1= need_first_value(row1)
     
 #need to set greatest increase/decrease values in profits/losses
     greatest_increase = 0
@@ -37,8 +38,8 @@ with open(bankdata) as csvfile:
     greatest_decrease_month = 0
 
     #creating list of change in profits/losses and indicating greatest increase/decrease
-    for row in csv_reader:
-        new_change2 = int(row[1])
+    for row in csv_reader:  
+        new_change1 = int(row[1])
         change = new_change2 - new_change1
         if change>=greatest_increase:
                 greatest_increase = change
@@ -47,7 +48,7 @@ with open(bankdata) as csvfile:
                 greatest_decrease = change
                 greatest_decrease_name = row[0]
         changes.append(change)
-        new_change1 = int(row[1])
+        new_change2 = new_change1
     changes.remove(changes[0])
     #print(changes)
     
@@ -69,6 +70,7 @@ with open(bankdata) as csvfile:
             
     print (f'Greatest Increase in Profits: {greatest_increase_name} (${greatest_increase})')
     print (f'Greatest Decrease in Profits: {greatest_decrease_name} (${greatest_decrease})')
+
     
 
     for row in csv_reader:
