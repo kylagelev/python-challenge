@@ -6,7 +6,7 @@ with open(bankdata) as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
     header = next(csv_reader)
 
-    #total number of months, meaning total number of rows in data
+#total number of months, meaning total number of rows in data
     csv_reader=list(csv_reader)
     count_months=csv_reader
     print(f'Number of Months: {len(count_months)}')
@@ -18,7 +18,59 @@ with open(bankdata) as csvfile:
         profit_loss = int(row[1])
         net_total = net_total + profit_loss
     print(f'Net Total: ${net_total}')
+
+    #average change in profit
+    changes=[]
     
+    #created function to find first value in series of lists
+    def need_first_value(row1):
+        return [item[0] for item in row1]
+    
+    #using function
+    row1 = csv_reader
+    need_first_value(row1)
+    
+#need to set greatest increase/decrease values in profits/losses
+    greatest_increase = 0
+    greatest_decrease = 0
+    greatest_increase_month = 0
+    greatest_decrease_month = 0
+
+    #creating list of change in profits/losses and indicating greatest increase/decrease
+    for row in csv_reader:
+        new_change2 = int(row[1])
+        change = new_change2 - new_change1
+        if change>=greatest_increase:
+                greatest_increase = change
+                greatest_increase_name = row[0]
+        if change<=greatest_decrease:
+                greatest_decrease = change
+                greatest_decrease_name = row[0]
+        changes.append(change)
+        new_change1 = int(row[1])
+    changes.remove(changes[0])
+    #print(changes)
+    
+    total = 0
+    for x in range(len(changes)):
+        item =(changes[x])
+        total = total + item
+    average = (total)/(len(changes))
+    print(f'Average Change: ${round(average,2)}')
+    
+#greatest increase/decrease in profit/loss
+    #greatest_increase = 0
+    #greatest_decrease = 0
+    #for x in range(len(changes)):
+        #if changes[x]>=greatest_increase:
+            #greatest_increase = changes[x]
+        #if changes[x]<=greatest_decrease:
+            #greatest_decrease = changes[x]
+            
+    print (f'Greatest Increase in Profits: {greatest_increase_name} (${greatest_increase})')
+    print (f'Greatest Decrease in Profits: {greatest_decrease_name} (${greatest_decrease})')
+    
+
     for row in csv_reader:
         print(row)
 # %%
