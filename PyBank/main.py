@@ -28,6 +28,7 @@ with open(bankdata) as csvfile:
     greatest_decrease = 0
     greatest_increase_month = 0
     greatest_decrease_month = 0
+    new_change2 = 0
 
     #creating list of change in profits/losses and indicating greatest increase/decrease
     for row in csv_reader:  
