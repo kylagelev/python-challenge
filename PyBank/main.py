@@ -2,6 +2,8 @@
 import os
 import csv
 bankdata = os.path.join('..','Resources','budget_data.csv')
+print("Financial Analysis")
+print("----------------------")
 with open(bankdata) as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
     header = next(csv_reader)
