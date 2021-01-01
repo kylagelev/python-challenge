@@ -9,8 +9,8 @@ with open(bankdata) as csvfile:
     #total number of months, meaning total number of rows in data
     csv_reader=list(csv_reader)
     count_months=csv_reader
-    print(f'number of months: {len(count_months)}')
-    
+    print(f'Number of Months: {len(count_months)}')
+
     for row in csv_reader:
         print(row)
 # %%
