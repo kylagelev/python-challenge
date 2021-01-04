@@ -7,28 +7,45 @@ with open(polldata) as csvfile:
     header = next(csv_reader)
 
     #total number of votes cast
-    csv_reader=list(csv_reader)
-    number_of_votes = len(csv_reader)
+    candidates_list=list(csv_reader)
+    number_of_votes = len(candidates_list)
     print(f'Total Votes: {number_of_votes}')
     
 #candidates' individual votes and percentages
-    #want to alphabetize list in order to input unique candidate names and the counted votes for each respective individual
-    alphabetized_candidates = sorted(csv_reader, key=lambda x: x[2])
-
-    candidates = []
-    name = 0
-    for row in alphabetized_candidates:
-        if row[2] != name:
-            name = row[2]
-            candidates.append(name)
-            pass
-        else:
-            name = row[2]
-            pass
+    candidates =[]
+    vote_count_0 = 0
+    vote_count_1 = 0
+    vote_count_2 = 0
+    vote_count_3 = 0
+    
+    #collecting all names
+    for row in candidates_list:
+        name = row[2]
+        candidates.append(name)
         
+    #collecting all list of unique names
+    unique_names = []    
+    for x in candidates:
+        if x not in unique_names:
+            unique_names.append(x)
+    print(unique_names)
+        
+    for row in candidates_list:
+        name = row[2]
+        if name == unique_names[0]:
+            vote_count_0 = vote_count_0 + 1
+        if name == unique_names[1]:
+            vote_count_1 = vote_count_1 + 1
+        if name == unique_names[2]:
+            vote_count_2 = vote_count_2 + 1
+        if name == unique_names[3]:
+            vote_count_3 = vote_count_3 + 1
             
-        
-        print(candidates)
-    #for row in csv_reader:
-        #print(row)
+    print (vote_count_0)
+    print (vote_count_1)
+    print (vote_count_2)
+    print (vote_count_3)
+
+
+    
 # %%
