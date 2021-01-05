@@ -90,5 +90,3 @@ with open (output_path,'w', newline = '') as csvfile:
     csvwriter.writerow(["O'Tooley: 3.000% (105630)"])
     csvwriter.writerow(['-------------------'])
     csvwriter.writerow(['Winner: Khan!'])
-
-#%%
