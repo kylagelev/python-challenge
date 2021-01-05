@@ -1,4 +1,5 @@
 # %%
+#above symbols allows code to run in jupyter interactive
 import os
 import csv
 bankdata = os.path.join('..','Resources','budget_data.csv')
