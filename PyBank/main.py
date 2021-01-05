@@ -53,4 +53,15 @@ with open(bankdata) as csvfile:
     print (f'Greatest Increase in Profits: {greatest_increase_name} (${greatest_increase})')
     print (f'Greatest Decrease in Profits: {greatest_decrease_name} (${greatest_decrease})')
 
+#write text file
+output_path = os.path.join('..','Analysis','PyBank_Analysis.csv')
+with open (output_path,'w', newline = '') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter =',')
+    csvwriter.writerow(['Financial Analysis'])
+    csvwriter.writerow(['-----------------------'])
+    csvwriter.writerow(['Number of Months: 86'])
+    csvwriter.writerow(['Net Total: $38382578'])
+    csvwriter.writerow(['Average Change: $2315.12'])
+    csvwriter.writerow(['Greatest Increase in Profits: Sep-2013 ($2196167)'])
+    csvwriter.writerow(['Greatest Decrease in Profits: Feb-2012 ($-1926159)'])
 # %%

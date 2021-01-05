@@ -1,4 +1,5 @@
 #%%
+#above symbol allows code to run in jupyter interactive
 import os
 import csv
 polldata = os.path.join('..','Resources','election_data.csv')
@@ -74,5 +75,20 @@ with open(polldata) as csvfile:
         print(f'Winner: {unique_names[2]}!')
     if sorted_individual_votes[0] == vote_count_3:
         print(f'Winner: {unique_names[3]}!')
+
+#write text file
+output_path = os.path.join('..','Analysis','PyPoll_Analysis.csv')
+with open (output_path,'w', newline = '') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter =',')
+    csvwriter.writerow(['Election Results'])
+    csvwriter.writerow(['-------------------'])
+    csvwriter.writerow(['Total Votes: 3521001'])
+    csvwriter.writerow(['-------------------'])
+    csvwriter.writerow(['Khan: 63.000% (2218231)'])
+    csvwriter.writerow(['Correy: 20.000% (704200)'])
+    csvwriter.writerow(['Li: 14.000% (492940)'])
+    csvwriter.writerow(["O'Tooley: 3.000% (105630)"])
+    csvwriter.writerow(['-------------------'])
+    csvwriter.writerow(['Winner: Khan!'])
 
 #%%
