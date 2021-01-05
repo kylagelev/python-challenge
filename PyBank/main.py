@@ -65,4 +65,3 @@ with open (output_path,'w', newline = '') as csvfile:
     csvwriter.writerow(['Average Change: $2315.12'])
     csvwriter.writerow(['Greatest Increase in Profits: Sep-2013 ($2196167)'])
     csvwriter.writerow(['Greatest Decrease in Profits: Feb-2012 ($-1926159)'])
-# %%
