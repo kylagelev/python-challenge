@@ -68,13 +68,17 @@ with open(polldata) as csvfile:
     sorted_individual_votes = sorted(individual_votes, reverse = True)
     
     if sorted_individual_votes[0] == vote_count_0:
-        print(f'Winner: {unique_names[0]}!')
+        winner = unique_names[0]
+        print(f'Winner: {winner}!')
     if sorted_individual_votes[0] == vote_count_1:
-        print(f'Winner: {unique_names[1]}!')
+        winner = unique_names[1]
+        print(f'Winner: {winner}!')
     if sorted_individual_votes[0] == vote_count_2:
-        print(f'Winner: {unique_names[2]}!')
+        winner = unique_names[2]
+        print(f'Winner: {winner}!')
     if sorted_individual_votes[0] == vote_count_3:
-        print(f'Winner: {unique_names[3]}!')
+        winner = unique_names[3]
+        print(f'Winner: {winner}!')
 
 #write text file
 output_path = os.path.join('..','Analysis','PyPoll_Analysis.csv')
@@ -82,11 +86,13 @@ with open (output_path,'w', newline = '') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter =',')
     csvwriter.writerow(['Election Results'])
     csvwriter.writerow(['-------------------'])
-    csvwriter.writerow(['Total Votes: 3521001'])
+    csvwriter.writerow([f'Total Votes: {number_of_votes}'])
     csvwriter.writerow(['-------------------'])
-    csvwriter.writerow(['Khan: 63.000% (2218231)'])
-    csvwriter.writerow(['Correy: 20.000% (704200)'])
-    csvwriter.writerow(['Li: 14.000% (492940)'])
-    csvwriter.writerow(["O'Tooley: 3.000% (105630)"])
+    csvwriter.writerow([f'{unique_names[0]}: {round(percentage_0,2)}00% ({vote_count_0})'])
+    csvwriter.writerow([f'{unique_names[1]}: {round(percentage_1,2)}00% ({vote_count_1})'])
+    csvwriter.writerow([f'{unique_names[2]}: {round(percentage_2,2)}00% ({vote_count_2})'])
+    csvwriter.writerow([f'{unique_names[3]}: {round(percentage_3,2)}00% ({vote_count_3})'])
     csvwriter.writerow(['-------------------'])
-    csvwriter.writerow(['Winner: Khan!'])
+    csvwriter.writerow([f'Winner: {winner}!'])
+
+# %%
