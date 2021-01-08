@@ -1,5 +1,5 @@
 #%%
-#above symbol allows code to run in jupyter interactive
+#above symbol allows code to run in jupyter interactive from vscode
 import os
 import csv
 polldata = os.path.join('..','Resources','election_data.csv')
