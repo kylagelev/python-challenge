@@ -60,10 +60,10 @@ with open (output_path,'w', newline = '') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter =',')
     csvwriter.writerow(['Financial Analysis'])
     csvwriter.writerow(['-----------------------'])
-    csvwriter.writerow(['Number of Months: 86'])
-    csvwriter.writerow(['Net Total: $38382578'])
-    csvwriter.writerow(['Average Change: $2315.12'])
-    csvwriter.writerow(['Greatest Increase in Profits: Sep-2013 ($2196167)'])
-    csvwriter.writerow(['Greatest Decrease in Profits: Feb-2012 ($-1926159)'])
+    csvwriter.writerow([f'Number of Months: {len(count_months)}'])
+    csvwriter.writerow([f'Net Total: ${net_total}'])
+    csvwriter.writerow([f'Average Change: ${round(average,2)}'])
+    csvwriter.writerow([f'Greatest Increase in Profits: {greatest_increase_name} (${greatest_increase})'])
+    csvwriter.writerow([f'Greatest Decrease in Profits: {greatest_decrease_name} (${greatest_decrease})'])
 
 # %%
