@@ -1,5 +1,5 @@
 # %%
-#above symbols allows code to run in jupyter interactive
+#above symbols allows code to run in jupyter interactive from vscode
 import os
 import csv
 bankdata = os.path.join('..','Resources','budget_data.csv')
