@@ -55,9 +55,9 @@ with open(bankdata) as csvfile:
     print (f'Greatest Decrease in Profits: {greatest_decrease_name} (${greatest_decrease})')
 
 #write text file
-output_path = os.path.join('..','Analysis','PyBank_Analysis.csv')
-with open (output_path,'w', newline = '') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter =',')
+output_path = os.path.join('..','Analysis','PyBank_Analysis.txt')
+with open (output_path,'w', newline = '') as txtfile:
+    csvwriter = csv.writer(txtfile, delimiter =',')
     csvwriter.writerow(['Financial Analysis'])
     csvwriter.writerow(['-----------------------'])
     csvwriter.writerow([f'Number of Months: {len(count_months)}'])
