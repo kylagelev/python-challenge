@@ -81,9 +81,9 @@ with open(polldata) as csvfile:
         print(f'Winner: {winner}!')
 
 #write text file
-output_path = os.path.join('..','Analysis','PyPoll_Analysis.csv')
-with open (output_path,'w', newline = '') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter =',')
+output_path = os.path.join('..','Analysis','PyPoll_Analysis.txt')
+with open (output_path,'w', newline = '') as txtfile:
+    csvwriter = csv.writer(txtfile, delimiter =',')
     csvwriter.writerow(['Election Results'])
     csvwriter.writerow(['-------------------'])
     csvwriter.writerow([f'Total Votes: {number_of_votes}'])
@@ -94,5 +94,4 @@ with open (output_path,'w', newline = '') as csvfile:
     csvwriter.writerow([f'{unique_names[3]}: {round(percentage_3,2)}00% ({vote_count_3})'])
     csvwriter.writerow(['-------------------'])
     csvwriter.writerow([f'Winner: {winner}!'])
-
 # %%
